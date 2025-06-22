@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Opinion Oasis</title>
+    <!-- Include your CSS stylesheets and JavaScript scripts here -->
+    <style>
+        /* Add your CSS styling here */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 9999;
+        }
+        .product-sections {
+            display: flex;
+            justify-content: space-between;
+        }
+        .product-card {
+            width: 30%;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            color: darkblue;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body class="text-black text-center bg-blue-200">
+    <header class="font-bold text-3xl text-blue-950">
+        <h1>OPINION OASIS</h1>
+    </header>
+
+    <div class="product-sections">
+        <!-- First Product Card -->
+        <div class="product-card object-center items-center bg-blue-300 rounded-xl shadow-2xl ">
+            {% load static %} 
+            <img src="{% static 'admin\img\alexa.jpg' %}" alt="Product 1 Image">
+            <h2 class="product-name font-bold">Alexa POD-8</h2>
+            <p class="product-price">$219.99</p>
+            <div class="product-details">
+                <!-- Product details content goes here -->
+                <p>Product 1 details...</p>
+                <form method="POST" class="mt-4">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label for="review1" class="block text-sm font-medium text-gray-700">Review:</label>
+                        <textarea id="review1" name="review" rows="4" class="m-0 p-0 block w-full rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 h-auto min-h-20 resize-none appearance-none outline-none"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label for="rating1" class="block text-sm font-medium text-gray-700">Rating:</label>
+                        <input type="float" id="rating1" min="0" max="5" name="rating" class="mt-1 px-3 py-2 block w-full rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                    </div>
+                    <input type="text" name="item" value="alexa" style="display: none;">
+                    <div class="mt-4">
+                        <button type="submit" class="inline-block px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 active:bg-indigo-800">
+                            Submit Review
+                        </button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+
+        <!-- Second Product Card -->
+        <div class="product-card justify-center items-center  bg-blue-300 rounded-xl shadow-2xl">
+            {% load static %} 
+            <img src="{% static 'admin\img\watch.jpg' %}" alt="Product 1 Image">
+            <h2 class="product-name font-bold">Apple Watch GEN-A1</h2>
+            <p class="product-price">$199.99</p>
+            <div class="product-details">
+                <!-- Product details content goes here -->
+                <p>Product 2 details...</p>
+                <form method="POST" class="mt-4">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label for="review1" class="block text-sm font-medium text-gray-700">Review:</label>
+                        <textarea id="review1" name="review" rows="4" class="m-0 p-0 block w-full rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 h-auto min-h-20 resize-none appearance-none outline-none"></textarea>
+
+                    </div>
+                    <div class="mb-4">
+                        <label for="rating1" class="block text-sm font-medium text-gray-700">Rating:</label>
+                        <input type="float" id="rating1" min=0 max=5 name="rating" class="mt-1 px-3 py-2 block w-full rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                    </div>
+                    <input type="text" name="item" value="watch" style="display: none;">
+                    <div class="mt-4">
+                        <button type="submit" class="inline-block px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 active:bg-indigo-800">
+                            Submit Review
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Third Product Card -->
+        <div class="product-card  bg-blue-300 rounded-xl shadow-2xl">
+            {% load static %} 
+            <img src="{% static 'admin\img\wallet.jpg' %}"  height="200px" alt="Product 1 Image">
+            <h2 class="product-name font-bold">Leather Wallets for Men</h2>
+            <p class="product-price">$29.99</p>
+            <div class="product-details">
+                <!-- Product details content goes here -->
+                <p>Product 3 details...</p>
+                <form method="POST" class="mt-4">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label for="review1" class="block text-sm font-medium text-gray-700">Review:</label>
+                        <textarea id="review1" name="review" rows="4" class="m-0 p-0 block w-full rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 h-auto min-h-20 resize-none appearance-none outline-none"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label for="rating1" class="block text-sm font-medium text-gray-700">Rating:</label>
+                        <input type="float" id="rating1" min="0" max="5" name="rating" class="mt-1 px-3 py-2 block w-full rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300">
+                    </div>
+                    <input type="text" name="item" value="wallet" style="display: none;">
+                    <div class="mt-4">
+                        <button type="submit" class="inline-block px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-200 active:bg-indigo-800">
+                            Submit Review
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        // Function to show a popup message
+        function showPopupMessage(message) {
+            // Create a popup element
+            var popup = document.createElement('div');
+            popup.className = 'popup';
+            popup.innerText = message;
+
+            // Append the popup element to the body
+            document.body.appendChild(popup);
+
+            // Automatically remove the popup after a few seconds (adjust the timeout as needed)
+            setTimeout(function() {
+                popup.remove();
+            }, 3000); // 3000 milliseconds (3 seconds) in this example
+        }
+
+        // Check if there is a popup message to display
+        var popupMessage = "{{ sentiment }}";
+        if (popupMessage) {
+            showPopupMessage(popupMessage);
+        }
+    </script>
+</body>
+</html>
